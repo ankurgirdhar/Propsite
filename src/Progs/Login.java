@@ -35,7 +35,6 @@ public class Login
 			//wait for sign in text to appear
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='topMenuLinkBtn']")));
 			driver.findElement(By.cssSelector("div[class='topMenuLinkBtn']")).click();
-			//wait.until(ExpectedConditions.)
 			
 			//wait for Google sign in button to appear
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='btn-google']")));
@@ -111,7 +110,7 @@ public class Login
 //				SSHRemotePort=3306
 
 		
-	@Test	
+	//@Test	
 	public void signup()
 	{
 		driver.manage().deleteAllCookies();
@@ -168,6 +167,10 @@ public class Login
 		if (d.findElement(By.xpath("//ul[@class='dropdown-menu']/li/span[text()='xc.kvj']")).isDisplayed())
 		{
 			System.out.println("User logged in by normal username and password, test case paxssed");
+		}
+		else
+		{
+			System.out.println("user not able to login");
 		}
 	}
 	
