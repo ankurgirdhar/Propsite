@@ -55,7 +55,7 @@ public class Performance
 				ob[i-1][0]=cell.getStringCellValue();
 			}
 		System.out.println("Total URLs to be tested = " + --i);
-		}catch(IOException e){System.out.println("Unable to Locate file");}
+		}catch(IOException e){e.printStackTrace();}
 		return ob;				
 	}	
 	
@@ -73,7 +73,7 @@ public class Performance
 		try
 		{
 			d.findElement(By.xpath("//input[@value='Re-run the test']"));
-		}catch(Exception E){System.out.println("Re run test button not found");}
+		}catch(Exception E){E.printStackTrace();}
 		afterResult(d,url);
 	}
 	
@@ -113,7 +113,7 @@ public class Performance
 			fileout.close();
 			fin.close();
 			System.out.println(url  + "   done");
-		}catch(IOException E){System.out.println("Unable to locate file");}
+		}catch(IOException E){E.printStackTrace();}
 	}
 	
 	@AfterTest

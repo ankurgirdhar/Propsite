@@ -66,7 +66,7 @@ public class links
 				ob[i-1][0]=cell.getStringCellValue();
 			}
 		System.out.println("Total URLs for which links will be derived = " + --i);
-		}catch(IOException e){System.out.println("Unable to Locate file");}
+		}catch(IOException e){e.printStackTrace();}
 		return ob;				
 	}	
 
@@ -77,7 +77,7 @@ public class links
 		try
 		{
 		Thread.sleep(5000);
-		}catch(InterruptedException E){System.out.println("waiting exception");}
+		}catch(InterruptedException E){E.printStackTrace();}
 		List<WebElement> links = d.findElements(By.tagName("a"));
 		List<String>  st= new ArrayList<String>();
 		for (WebElement e : links)
@@ -132,7 +132,7 @@ public class links
 			fileout.close();
 			fin.close();
 			
-		}catch(IOException E){System.out.println("Unable to locate file");}			
+		}catch(IOException E){E.printStackTrace();}			
 	}
 	
 	public int getURLStatus(String add)
@@ -147,7 +147,7 @@ public class links
 		connection.setInstanceFollowRedirects(false);     //To disable redirects else 301 will also give 200
 		connection.connect();
 		code = connection.getResponseCode();
-		}catch(IOException E){System.err.println("oops either link is invalid or some error occured");}
+		}catch(IOException E){E.printStackTrace();}
 		return code;
 	}
 	

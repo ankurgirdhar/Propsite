@@ -50,7 +50,7 @@ public class GoogleSpeedScore
 			String url;
 			fin = new FileInputStream("performance.xls");
 			wb = new HSSFWorkbook(fin);
-			sh=wb.getSheetAt(3);
+			sh=wb.getSheetAt(2);
 			lrow=sh.getLastRowNum();
 			rowlen=sh.getRow(2).getLastCellNum();			//assume that 1st row has maximum columns, hence computing this one only
 			for (i=2;i<=lrow;i++)
@@ -67,7 +67,7 @@ public class GoogleSpeedScore
 			fileout.flush();
 			fileout.close();
 			fin.close();
-		}catch(IOException e){System.out.println("Unable to Locate file");}
+		}catch(IOException e){e.printStackTrace();}
 	}		
 	
 	public String getGoogleScore(String url)

@@ -47,7 +47,7 @@ public class buffer
 		d.get("http://www.proptiger.com");
 		try{
 		Thread.sleep(5000);
-		}catch(InterruptedException E){System.out.println("kuch bhi");}
+		}catch(InterruptedException E){E.printStackTrace();}
 		//get title
 		String title = d.getTitle();
 		System.out.println(title);
@@ -76,17 +76,17 @@ public class buffer
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		try{
 			Thread.sleep(2000);
-			}catch(InterruptedException E){System.out.println("kuch bhi");}
+			}catch(InterruptedException E){E.printStackTrace();}
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 			
 		try{
 			Thread.sleep(2000);
-			}catch(InterruptedException E){System.out.println("kuch bhi");}
+			}catch(InterruptedException E){E.printStackTrace();}
 		
 		jse.executeScript("window.scrollTo(0,0)");
 		try{
 			Thread.sleep(2000);
-			}catch(InterruptedException E){System.out.println("kuch bhi");}
+			}catch(InterruptedException E){E.printStackTrace();}
 	
 	d.close();
 	}	

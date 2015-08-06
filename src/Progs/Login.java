@@ -40,7 +40,7 @@ public class Login
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='btn-google']")));
 			driver.findElement(By.cssSelector("button[class='btn-google']")).click();
 			try{
-				Thread.sleep(3000);}catch(InterruptedException e){System.out.println("Thread exception");}
+				Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}
 			
 			
 			/*Switch to new window*/ 
@@ -61,7 +61,7 @@ public class Login
 			driver.findElement(By.id("signIn")).click();
 			
 			
-			try{Thread.sleep(3000);}catch(InterruptedException e){System.out.println("Thread exception");}	
+			try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}	
 			driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
 			validateLogin();
 		}
@@ -82,7 +82,7 @@ public class Login
 			//wait for Google sign in button to appear
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='btn-facebook marginT10']")));
 			driver.findElement(By.cssSelector("button[class='btn-facebook marginT10']")).click();
-			try{Thread.sleep(3000);}catch(InterruptedException e){System.out.println("Thread exception");}
+			try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}
 			
 			
 			/*Switch to new window*/ 
@@ -97,7 +97,7 @@ public class Login
 			driver.findElement(By.id("u_0_2")).click();
 			
 			
-			try{Thread.sleep(3000);}catch(InterruptedException e){System.out.println("Thread exception");}	
+			try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}	
 			driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
 			validateLogin();
 		}
@@ -120,7 +120,7 @@ public class Login
 	
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Signup']")));
 		driver.findElement(By.xpath("//button[text()='Signup']")).click();
-		try{Thread.sleep(3000);}catch(InterruptedException e){System.out.println("Thread exception");}
+		try{Thread.sleep(3000);}catch(InterruptedException e){e.printStackTrace();}
 		
 		
 		//Fill the form for register
