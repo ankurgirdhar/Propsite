@@ -50,7 +50,7 @@ public class GoogleSpeedScore
 			String url;
 			fin = new FileInputStream("performance.xls");
 			wb = new HSSFWorkbook(fin);
-			sh=wb.getSheetAt(2);
+			sh=wb.getSheetAt(3);
 			lrow=sh.getLastRowNum();
 			rowlen=sh.getRow(2).getLastCellNum();			//assume that 1st row has maximum columns, hence computing this one only
 			for (i=2;i<=lrow;i++)
