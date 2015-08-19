@@ -68,7 +68,7 @@ public class Login
 		return driver.findElement(element);
 	}
 
-	//@Test
+	@Test
 	public void gSignIn()
 	{
 		driver.manage().deleteAllCookies();
@@ -105,7 +105,7 @@ public class Login
 		Assert.assertTrue(i==1);
 	}
 				
-	//@Test
+	@Test
 	public void fbSignIn()
 	{
 		driver.manage().deleteAllCookies();
@@ -186,7 +186,7 @@ public class Login
 		
 	}
 	
-	//@Test
+	@Test
 	public void login()
 	{
 		driver.manage().deleteAllCookies();
@@ -220,7 +220,7 @@ public class Login
 			return 1;
 		}
 		else
-			System.out.println("problem is there");
+			System.out.println("problem is there, can't decide whether user is logged in or not");
 			return 2;
 	}
 	

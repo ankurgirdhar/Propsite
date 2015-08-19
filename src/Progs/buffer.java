@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
 
 //comment
 
@@ -92,11 +93,31 @@ public class buffer
 	}	
 	
 	
-	
+	@Test
 	public void buffer2()
 	{
-		d=new FirefoxDriver();
-		d.get("https://www.proptiger.com/pune/kumar-urban-kruti-wadgaon-sheri-5000162/3bhk-3t-1368-sqft-apartment");
-		d.findElement(By.xpath("//"));
+//		d=new FirefoxDriver();
+//		d.get("https://www.proptiger.com/pune/kumar-urban-kruti-wadgaon-sheri-5000162/3bhk-3t-1368-sqft-apartment");
+		
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
+		d=new ChromeDriver();
+		d.get("http://www.proptiger.com");
+		try{
+		Thread.sleep(5000);
+		}catch(InterruptedException E){E.printStackTrace();}
+		//get title
+		String title = d.getTitle();
+		System.out.println(title);
+		
+		List<WebElement> images= d.findElements(By.tagName("img"));
+		System.out.println("Total images on this page " + images.size());
+		for (WebElement f : images)
+		{
+			String alttext = (f.getAttribute("alt"));
+			if (alttext.isEmpty())
+			System.err.println("No alt text found for image " + f.getAttribute("src"));
+			else
+			System.out.println(alttext);
+		}		
 	}
 }
