@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -30,11 +31,14 @@ public class Performance
 	HSSFSheet sh;
 	HSSFCell cell;
 	HSSFRow row;
+	WebDriverWait wait;
 	
 	@BeforeTest
 	public void init()
 	{
 		d=new FirefoxDriver();
+		d.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+		
 	}
 	
 	@DataProvider(name="ipURLs")
@@ -69,7 +73,7 @@ public class Performance
 		
 		WebElement startbutton = d.findElement(By.xpath("//input[@type='submit']"));
 		startbutton.click();
-		d.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
+		
 		try
 		{
 			d.findElement(By.xpath("//input[@value='Re-run the test']"));
